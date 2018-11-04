@@ -315,6 +315,8 @@
     <Compile Include="Assets\PID.cs" />
     <Compile Include="Assets\PIDTest.cs" />
     <Compile Include="Assets\PrintSpeed.cs" />
+    <Compile Include="Assets\RobotAcademy.cs" />
+    <Compile Include="Assets\RobotAgent.cs" />
     <Compile Include="Assets\RobotController.cs" />
     <Compile Include="Assets\Scripts\CarSwitcher.cs" />
     <Compile Include="Assets\Scripts\DriftCamera.cs" />

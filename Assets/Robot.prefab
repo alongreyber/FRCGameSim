@@ -625,14 +625,14 @@ MonoBehaviour:
   - {fileID: 146423299669974634}
   maxTorque: 10
   left:
-    pFactor: 1
-    iFactor: 0
+    pFactor: 2
+    iFactor: 0.1
     dFactor: 0
   right:
-    pFactor: 1
-    iFactor: 0
+    pFactor: 2
+    iFactor: 0.1
     dFactor: 0
-  targetSpeed: 1
+  targetSpeed: 0
 --- !u!146 &146368324060333924
 WheelCollider:
   m_ObjectHideFlags: 1

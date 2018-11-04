@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public abstract class RobotController : MonoBehaviour
 {
-    // By convention, the wheels alernate sides starting with left
+    // By convention, the wheels alternate sides starting with left
     public List<WheelCollider> wheels;
     public abstract void SetMotors(float[] currentSpeed, out float[] torques, out float[] steers);
 
@@ -39,16 +39,10 @@ public abstract class RobotController : MonoBehaviour
     {
         float[] steering, torque;
         float[] currentSpeed = new float[wheels.Count];
-        // Keep track of last frame's wheel positions so we can calculate the velocity
-        lastFrameWheelPositions = new Vector3[wheels.Count];
         for (int i = 0; i < wheels.Count; i++)
         {
-            // Vector magics
-            Vector3 vel = wheels[i].transform.TransformPoint(wheels[i].transform.position) - lastFrameWheelPositions[i];
-            Vector3 localVel = wheels[i].transform.InverseTransformDirection(vel);
-            float speed = Vector3.Project(localVel, wheels[i].transform.forward).magnitude;
+            float speed = wheels[i].rpm * wheels[i].radius;
             currentSpeed[i] = speed;
-            lastFrameWheelPositions[i] = wheels[i].transform.TransformPoint(wheels[i].transform.position);
         }
         SetMotors(currentSpeed, out torque, out steering);
         for (int i = 0; i < wheels.Count; i++)
